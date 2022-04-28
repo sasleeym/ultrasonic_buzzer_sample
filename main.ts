@@ -1,13 +1,13 @@
 basic.forever(function () {
     basic.showNumber(sonar.ping(
-    DigitalPin.P0,
-    DigitalPin.P0,
-    PingUnit.MicroSeconds
+    DigitalPin.P1,
+    DigitalPin.P2,
+    PingUnit.Centimeters
     ))
     if (sonar.ping(
-    DigitalPin.P0,
-    DigitalPin.P0,
-    PingUnit.MicroSeconds
+    DigitalPin.P1,
+    DigitalPin.P2,
+    PingUnit.Centimeters
     ) < 5) {
         music.playTone(988, music.beat(BeatFraction.Whole))
     }

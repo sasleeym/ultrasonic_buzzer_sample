@@ -1,13 +1,5 @@
-music.setVolume(500)
+music.setVolume(255)
 music.stopAllSounds()
-basic.forever(function () {
-    serial.writeLine("" + (sonar.ping(
-    DigitalPin.P1,
-    DigitalPin.P2,
-    PingUnit.Centimeters
-    )))
-    basic.pause(100)
-})
 basic.forever(function () {
     basic.showNumber(sonar.ping(
     DigitalPin.P1,
@@ -19,10 +11,17 @@ basic.forever(function () {
     DigitalPin.P2,
     PingUnit.Centimeters
     ) > 5) {
+        music.changeTempoBy(100)
         music.ringTone(988)
         music.ringTone(349)
     } else {
         music.ringTone(131)
     }
-    basic.pause(100)
+})
+basic.forever(function () {
+    serial.writeLine("" + (sonar.ping(
+    DigitalPin.P1,
+    DigitalPin.P2,
+    PingUnit.Centimeters
+    )))
 })
